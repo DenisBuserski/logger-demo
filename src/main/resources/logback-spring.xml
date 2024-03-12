@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration debug="true" scan="true" scanPeriod="30 seconds">
+    <!--
+    It can include global settings for the entire application
+    -->
 
-<!--    <property name="COLOR_RED" value="\u001B[31m" />-->
-<!--    <property name="LOG_CONSOLE_PATTERN" value="%d{HH:mm:ss.SSS} [%t] %highlight(%level){'\u001B[31m', '\u001B[33m', '\u001B[32m'} %lo On line %line %highlight(DENIS){'\u001B[31m'} - %msg%n"/>-->
-    <property name="LOG_CONSOLE_PATTERN" value="%d{HH:mm:ss.SSS} [%t] %highlight(%level){FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue} - %msg%n"/>
+    <!--    <property name="COLOR_RED" value="\u001B[31m" />-->
+    <!--    <property name="LOG_CONSOLE_PATTERN" value="%d{HH:mm:ss.SSS} [%t] %highlight(%level){'\u001B[31m', '\u001B[33m', '\u001B[32m'} %lo On line %line %highlight(DENIS){'\u001B[31m'} - %msg%n"/>-->
+    <property name="LOG_CONSOLE_PATTERN"
+              value="%d{HH:mm:ss.SSS} [%t] %highlight(%level){FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue} - %msg%n"/>
     <!--
     %d - Date and time
     %t - Thread name
@@ -23,6 +27,7 @@
 
 
     <!-- Appenders define where log messages should be sent -->
+    <!-- Defines individual appenders, which specify where log messages should be sent -->
     <appender name="Console-Appender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>${LOG_CONSOLE_PATTERN}</pattern>
@@ -37,19 +42,30 @@
         </encoder>
     </appender>
 
+    <!-- TODO: Email appender -->
 
-    <logger name="com.logger" level="info">
+
+    <!--
+    Define the configuration for the root logger. The root logger is the ancestor of all loggers in the
+    logger hierarchy. Any log statement that does not match a more specific logger will be handled by the
+    root logger. If I make a second root(Example root level="ERROR") it will override root level="INFO".
+    Can be overridden by more specific logger configurations.
+    -->
+<!--    <root level="INFO">-->
+<!--        <appender-ref ref="Console-Appender"/>-->
+<!--        <appender-ref ref="File-Appender"/>-->
+<!--    </root>-->
+
+    <!-- Configure the log level and appender for each logger -->
+    <logger name="com.logger.Runner" level="error">
+        <appender-ref ref="Console-Appender"/>
+    </logger>
+
+    <logger name="com.logger.MyService" level="info">
         <appender-ref ref="File-Appender"/>
     </logger>
 
-    <root level="INFO">
-        <appender-ref ref="Console-Appender"/>
-    </root>
 
-<!--    <loggers> &lt;!&ndash; Loggers define the logging behavior for specific packages or classes &ndash;&gt;-->
-<!--        <root level="TRACE" additivity="false"> &lt;!&ndash; Root Logger is the default logger for all classes &ndash;&gt;-->
-<!--            <appender-ref ref="console" /> &lt;!&ndash; AppenderRef references the appender (Console) to be used by the logger &ndash;&gt;-->
-<!--        </root>-->
-<!--    </loggers>-->
+
 
 </configuration>

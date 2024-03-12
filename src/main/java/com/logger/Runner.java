@@ -21,6 +21,8 @@ public class Runner implements CommandLineRunner {
 
         LOGGER.info("My name is {}. Nice to mee you!", "Denis");
 
+        MyService myService = new MyService();
+
 
     }
 }
