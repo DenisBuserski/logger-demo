@@ -1,0 +1,2 @@
+#logback.classic pattern: %d{HH:mm:ss.SSS} [%t] %level %logger{0} DENIS - %msg%n
+01:36:04.020 [main] INFO MyService DENIS - MyService was created

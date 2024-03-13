@@ -6,12 +6,12 @@ The purpose of this project is to see how logging is done in Spring Boot.
 
 
 ## Additional information
+- [Logger In Spring Boot](https://javatechonline.com/logger-in-spring-boot/)
 - [Logback Xml Configuration Examples](https://javatechonline.com/logback-xml-configuration-examples/)
-- [Logger In Spring Boot](https://javatechonline.com/logger-in-spring-boot/#What_is_a_Log)*
 - [Logback manual](https://logback.qos.ch/manual/index.html)*
-- https://springframework.guru/logback-enterprise-logging-framework-2/
-- https://springframework.guru/logback-configuration-using-xml/
-- https://springframework.guru/using-logback-spring-boot/
+- [Logback Introduction: An Enterprise Logging Framework](https://springframework.guru/logback-enterprise-logging-framework-2/)
+- [Logback Configuration: Using XML](https://springframework.guru/logback-configuration-using-xml/)
+- [Using Logback with Spring Boot](https://springframework.guru/using-logback-spring-boot/)
 
 #### ELK
 - https://www.youtube.com/watch?v=dThFF7-wKv4&t=1s

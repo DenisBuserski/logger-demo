@@ -1,9 +1,0 @@
-#logback.classic pattern: %d{HH:mm:ss.SSS} [%t] %level %logger{0} DENIS - %msg%n
-22:01:52.706 [main] INFO Application DENIS - Starting Application using Java 18.0.2 with PID 27320 (C:\Users\HP\Desktop\logger-demo\target\classes started by HP in C:\Users\HP\Desktop\logger-demo)
-22:01:52.706 [main] INFO Application DENIS - No active profile set, falling back to 1 default profile: "default"
-22:01:53.511 [main] INFO Application DENIS - Started Application in 1.083 seconds (process running for 1.409)
-22:01:53.513 [main] INFO Runner DENIS - Current log level: Not TRACE
-22:01:53.515 [main] INFO Runner DENIS - This is an INFO message
-22:01:53.515 [main] WARN Runner DENIS - This is a WARN message
-22:01:53.515 [main] ERROR Runner DENIS - This is an ERROR message
-22:01:53.515 [main] INFO Runner DENIS - My name is Denis. Nice to mee you!

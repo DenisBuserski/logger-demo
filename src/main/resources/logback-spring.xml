@@ -3,6 +3,7 @@
 <configuration debug="true" scan="true" scanPeriod="30 seconds">
     <!--
     It can include global settings for the entire application
+    TODO: configuration element
     -->
 
     <!--    <property name="COLOR_RED" value="\u001B[31m" />-->
@@ -56,12 +57,16 @@
 <!--        <appender-ref ref="File-Appender"/>-->
 <!--    </root>-->
 
-    <!-- Configure the log level and appender for each logger -->
-    <logger name="com.logger.Runner" level="error">
+    <!--
+    Configure the log level and appender for each logger
+    OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL
+    If the logging level is set to WARN, it will capture WARN, ERROR, and FATAL
+    -->
+    <logger name="com.logger.Runner" level="INFO">
         <appender-ref ref="Console-Appender"/>
     </logger>
 
-    <logger name="com.logger.MyService" level="info">
+    <logger name="com.logger.MyService" level="INFO">
         <appender-ref ref="File-Appender"/>
     </logger>
 
